@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import CourseGoalItem from "../CourseGoalItem/CourseGoalItem";
 
 const CourseGoalList = () => {
   return (
-    <div>CourseGoalList</div>
-  )
-}
+    <div>
+      CourseGoalList
+      <CourseGoalItem />
+    </div>
+  );
+};
 
-export default CourseGoalList
+export default CourseGoalList;

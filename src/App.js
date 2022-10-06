@@ -1,4 +1,5 @@
 import "./App.css";
+import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList";
 import CourseInput from "./components/CourseGoals/CourseInput/CourseInput";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
         <CourseInput />
       </section>
       <section id="goals">
-        <h3>Goal List</h3>
+        <CourseGoalList/>
       </section>
     </div>
   );
