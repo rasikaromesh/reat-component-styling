@@ -1,4 +1,6 @@
 .item{
+    box-sizing: border-box;
+    margin: 1rem auto;
     width: 100%;
     background-color: #be08a3;
     padding: 1rem 2rem;
