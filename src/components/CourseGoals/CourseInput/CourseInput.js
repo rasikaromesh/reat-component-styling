@@ -5,7 +5,7 @@ import "./CourseInput.css";
 const CourseInput = (props) => {
   const onClickHandle = (event) => {
     event.preventDefault();
-    props.submit(event.target.value);
+    props.onAddGoal(event.target.value);
   };
   return (
     <form onSubmit={onClickHandle} className="form-control">

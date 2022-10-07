@@ -4,11 +4,11 @@ import CourseGoalItem from "../CourseGoalItem/CourseGoalItem";
 import "./CourseGoalList.css";
 const CourseGoalList = (props) => {
   return (
-    <div className="goal-list">
+    <ul className="goal-list">
       {props.goals.map((item) => (
-        <CourseGoalItem key={item.id} lable={item.goal} />
+        <CourseGoalItem key={item.id} id={item.id} onClick={props.onDelete}>{item.goal}</CourseGoalItem>
       ))}
-    </div>
+    </ul>
   );
 };
 

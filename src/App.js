@@ -10,7 +10,7 @@ function App() {
     { goal: "Improve my react knoladge!", id: "3" },
   ]);
 
-  const onSubmit = (goal) => {
+  const onSubmitHandler = (goal) => {
     console.log("onSubmit");
     setGoals((prevGoals) => {
       const updatedGoals = [...prevGoals];
@@ -18,13 +18,22 @@ function App() {
       return updatedGoals;
     });
   };
+
+  const onDeleteHandler = (id) => {
+    setGoals(prevGoals => {
+      const updatedGoals = prevGoals.filter(goal => goal.id != id);
+      return updatedGoals;
+    })
+
+  }
+
   return (
     <div className="App">
       <section id="goals-form">
-        <CourseInput submit={onSubmit}/>
+        <CourseInput onAddGoal={onSubmitHandler}/>
       </section>
       <section id="goals">
-        <CourseGoalList goals={goals} />
+        <CourseGoalList onDelete={onDeleteHandler} goals={goals} />
       </section>
     </div>
   );

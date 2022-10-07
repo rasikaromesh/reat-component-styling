@@ -2,7 +2,10 @@ import React from "react";
 import "./CourseGoalItem.css";
 
 const CourseGoalItem = (props) => {
-  return <div className="item">{props.lable}</div>;
+    const onClickHandler = () => {
+        props.onClick(props.id)
+      }
+  return <li className="item" onClick={onClickHandler}>{props.children}</li>;
 };
 
 export default CourseGoalItem;
