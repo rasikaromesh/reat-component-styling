@@ -11,7 +11,6 @@ function App() {
   ]);
 
   const onSubmitHandler = (goal) => {
-    console.log("onSubmit");
     setGoals((prevGoals) => {
       const updatedGoals = [...prevGoals];
       updatedGoals.unshift({ goal, id: Math.random().toString() });
