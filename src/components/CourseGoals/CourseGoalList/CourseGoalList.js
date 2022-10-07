@@ -2,16 +2,11 @@ import React from "react";
 import CourseGoalItem from "../CourseGoalItem/CourseGoalItem";
 
 import "./CourseGoalList.css";
-const CourseGoalList = () => {
-  const list = [
-    "Finished the course!",
-    "Do all tbe excercise!",
-    "Improve my react knoladge!",
-  ];
+const CourseGoalList = (props) => {
   return (
     <div className="goal-list">
-      {list.map((item) => (
-        <CourseGoalItem key={item} lable={item} />
+      {props.goals.map((item) => (
+        <CourseGoalItem key={item.id} lable={item.goal} />
       ))}
     </div>
   );
