@@ -20,7 +20,7 @@ function App() {
 
   const onDeleteHandler = (id) => {
     setGoals(prevGoals => {
-      const updatedGoals = prevGoals.filter(goal => goal.id != id);
+      const updatedGoals = prevGoals.filter(goal => goal.id !== id);
       return updatedGoals;
     })
 

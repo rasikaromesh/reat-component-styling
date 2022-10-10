@@ -12,12 +12,13 @@ const CourseInput = (props) => {
   const onClickHandle = (event) => {
     event.preventDefault();
     props.onAddGoal(inputGoal);
+    setInputGoal("");
   };
   return (
     <form onSubmit={onClickHandle} className="form-control">
       <div className="from-action">
         <label> Course Goal </label>
-        <input type="text" onChange={onChangeHandler}/>
+        <input type="text" value={inputGoal} onChange={onChangeHandler} />
       </div>
       <div className="form-actoin">
         <Button label="Add Goal" type="submit" />
