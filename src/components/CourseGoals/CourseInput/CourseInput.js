@@ -21,7 +21,7 @@ const CourseInput = (props) => {
         <input type="text" value={inputGoal} onChange={onChangeHandler} />
       </div>
       <div className="form-actoin">
-        <Button label="Add Goal" type="submit" />
+        <Button type="submit" >Add Goal</Button>
       </div>
     </form>
   );
