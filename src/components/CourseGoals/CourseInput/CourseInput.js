@@ -9,12 +9,14 @@ const FormControl = styled.div`
     margin-bottom: 0.5rem;
     display: block;
     font-weight: bold;
+    color: ${(props) => (props.invalid ? "red" : "black")};
   }
 
   & input {
     display: block;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid ${props => (props.invalid? 'red': '#ccc')};
+    background: ${props => (props.invalid? '#ffd7d7': 'transparent')};
     font: inherit;
     line-height: 1.5rem;
     padding: 0 0.25rem;
@@ -36,7 +38,8 @@ const CourseInput = (props) => {
   const [isValid, setIsValid] = useState(true);
 
   const onChangeHandler = (event) => {
-    if (event.target.value.trim().length < 0) {
+    setIsValid(true)
+    if (event.target.value.trim().length < 1) {
       setIsValid(false);
     }
     setInputGoal(event.target.value);
@@ -44,10 +47,11 @@ const CourseInput = (props) => {
 
   const onClickHandle = (event) => {
     event.preventDefault();
-    if (inputGoal.trim().length < 0) {
+    if (inputGoal.trim().length < 1) {
       setIsValid(false);
+    } else {
+      props.onAddGoal(inputGoal);
     }
-    props.onAddGoal(inputGoal);
     setInputGoal("");
   };
 
